@@ -4,6 +4,7 @@ import Header from "./components/header/Header";
 import GalleryView from "./components/galleryView/GalleryView";
 import ListView from "./components/listView/ListView";
 import DetailView from "./components/detailView/DetailView";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   const api_key = "a4d366e658580b25d2ef402d277cb96f";
@@ -30,12 +31,16 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <>
       <Header />
-      <ListView />
-      <DetailView />
-      <GalleryView movieData={movieData} api_key={api_key} />
-    </div>
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<ListView />} />
+          <Route exact path="/gallery" element={<GalleryView movieData={movieData} api_key={api_key} />} />
+          <Route path="/detail/:title" element={<DetailView movieDetails={movieData} />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
 
