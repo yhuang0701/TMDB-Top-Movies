@@ -20,17 +20,18 @@
 }
 
 .genreBtn {
-  background: #0F2C59; 
+  background-color: #0F2C59; 
   color: white;
   padding: 0.5rem 2.5rem;
   border: none;
   border-radius: 2rem;
   font-size: 1rem;
   margin: 1rem 1rem;
+  transition: background-color 0.3s;
 }
 
 .genreBtn:hover {
-  background: #3d1ad6;
+  background-color: #3d1ad6;
   cursor: pointer;
 }
 
