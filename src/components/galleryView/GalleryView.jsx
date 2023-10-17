@@ -1,24 +1,24 @@
 import './GalleryView.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import axios from 'axios';
 
 const GalleryView = ({ movieData, api_key }) => {
   const [genres, setGenres] = useState([]);
   const [filteredMovies, setFilteredMovies] = useState([]);
 
-  useEffect(() => {
-    getGenreData();
-    setFilteredMovies(movieData);
-  }, [movieData]);
-
-  const getGenreData = async () => {
+  const getGenreData = useCallback(async () => {
     try {
       const response = await axios.get(`https://api.themoviedb.org/3/genre/movie/list?language=en&api_key=${api_key}`);
       setGenres(response.data.genres);
     } catch (error) {
       console.error('Error fetching genres:', error);
     }
-  }
+  }, [api_key]);
+
+  useEffect(() => {
+    getGenreData();
+    setFilteredMovies(movieData);
+  }, [getGenreData, movieData]);
 
   const handleFilter = (genreId) => {
     if (genreId === 0) {
