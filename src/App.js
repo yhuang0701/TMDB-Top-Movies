@@ -1,18 +1,18 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Header from "./components/header/Header";
-import Gallery from "./components/gallery/Gallery";
+import Gallery from "./components/galleryView/Gallery";
 
 function App() {
-
+  const api_key = "a4d366e658580b25d2ef402d277cb96f";
   const [movieData, setMovieData] = useState([]);
+
   useEffect(() => {
     getTopMovieData();
   }, []);
 
   const getTopMovieData = async () => {
     let allData = []
-    const api_key = "a4d366e658580b25d2ef402d277cb96f";
 
     for (let page = 1; page <= 10; page++) {
       try {
@@ -30,7 +30,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Gallery movieData={movieData} />
+      <Gallery movieData={movieData} api_key={api_key} />
     </div>
   );
 }
