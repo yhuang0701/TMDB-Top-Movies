@@ -35,7 +35,7 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route exact path="/" element={<ListView />} />
+          <Route exact path="/" element={<ListView movieData={movieData} />} />
           <Route exact path="/gallery" element={<GalleryView movieData={movieData} api_key={api_key} />} />
           <Route path="/detail/:title" element={<DetailView movieDetails={movieData} />} />
         </Routes>
