@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import Header from "./components/header/Header";
 import GalleryView from "./components/galleryView/GalleryView";
@@ -10,11 +10,7 @@ function App() {
   const api_key = "a4d366e658580b25d2ef402d277cb96f";
   const [movieData, setMovieData] = useState([]);
 
-  useEffect(() => {
-    getTopMovieData();
-  }, []);
-
-  const getTopMovieData = async () => {
+  const getTopMovieData = useCallback(async () => {
     let allData = []
 
     for (let page = 1; page <= 10; page++) {
@@ -28,7 +24,11 @@ function App() {
     }
     setMovieData(allData);
     console.log(allData);
-  }
+  }, [api_key]);
+
+  useEffect(() => {
+    getTopMovieData();
+  }, [getTopMovieData]);
 
   return (
     <>
