@@ -1,6 +1,6 @@
 #header {
   height: 5rem;
-  margin: 2rem auto;
+  margin: 1.5rem auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,4 +9,31 @@
 #header h2 {
   font-size: 3rem;
   font-weight: 400;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.nav-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+  background-color: #0056b3;
 }
