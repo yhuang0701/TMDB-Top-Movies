@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Header from "./components/header/Header";
-import Gallery from "./components/galleryView/Gallery";
+import GalleryView from "./components/galleryView/GalleryView";
+import ListView from "./components/listView/ListView";
+import DetailView from "./components/detailView/DetailView";
 
 function App() {
   const api_key = "a4d366e658580b25d2ef402d277cb96f";
@@ -30,7 +32,9 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Gallery movieData={movieData} api_key={api_key} />
+      <ListView />
+      <DetailView />
+      <GalleryView movieData={movieData} api_key={api_key} />
     </div>
   );
 }

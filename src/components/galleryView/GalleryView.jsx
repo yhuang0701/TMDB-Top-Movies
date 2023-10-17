@@ -1,8 +1,8 @@
-import './Gallery.css';
+import './GalleryView.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const Gallery = ({ movieData, api_key }) => {
+const GalleryView = ({ movieData, api_key }) => {
   const [genres, setGenres] = useState([]);
   const [filteredMovies, setFilteredMovies] = useState([]);
 
@@ -47,11 +47,11 @@ const Gallery = ({ movieData, api_key }) => {
       <div id="gallery">
         {filteredMovies.map(movie => (
           <div key={movie.id} className="movie-card">
-            <img className="movieImg" src={`https://image.tmdb.org/t/p/w154${movie.poster_path}`} alt="movie image" />
+            <img className="movieImg" src={`https://image.tmdb.org/t/p/w154${movie.poster_path}`} alt="movie poster" />
           </div>
         ))}
       </div>
     </>
   )
 }
-export default Gallery;
+export default GalleryView;
