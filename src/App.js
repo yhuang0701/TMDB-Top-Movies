@@ -30,7 +30,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Gallery />
+      <Gallery movieData={movieData} />
     </div>
   );
 }
