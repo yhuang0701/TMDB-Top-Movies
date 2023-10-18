@@ -1,6 +1,7 @@
 import './GalleryView.css';
 import { useEffect, useState, useCallback } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const GalleryView = ({ movieData, api_key }) => {
   const [genres, setGenres] = useState([]);
@@ -46,9 +47,11 @@ const GalleryView = ({ movieData, api_key }) => {
 
       <div id="gallery">
         {filteredMovies.map(movie => (
-          <div key={movie.id} className="movie-card">
-            <img className="movieImg" src={`https://image.tmdb.org/t/p/w154${movie.poster_path}`} alt="movie poster" />
-          </div>
+          <Link key={movie.id} to={`/detail/${movie.id}`}>
+            <div className="movie-card">
+              <img className="movieImg" src={`https://image.tmdb.org/t/p/w154${movie.poster_path}`} alt="movie poster" />
+            </div>
+          </Link>
         ))}
       </div>
     </>

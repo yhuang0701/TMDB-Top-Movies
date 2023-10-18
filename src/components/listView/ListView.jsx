@@ -1,5 +1,6 @@
 import './ListView.css'
 import { useState, useEffect, useCallback } from 'react';
+import { Link } from 'react-router-dom';
 
 
 const ListView = ({ movieData }) => {
@@ -78,14 +79,19 @@ const ListView = ({ movieData }) => {
         </div>
       </div>
       {sortedData.map(movie => (
+
         <div key={movie.id} className="listview-card">
-          <img className="movieListImg" src={`https://image.tmdb.org/t/p/w92${movie.poster_path}`} alt="movie poster" />
+          <Link to={`detail/${movie.id}`}>
+            <img className="movieListImg" src={`https://image.tmdb.org/t/p/w92${movie.poster_path}`} alt="movie poster" />
+          </Link>
           <h3>{movie.title}</h3>
           <h3>{movie.release_date}</h3>
           <h3>{`Movie Rating: ${movie.vote_average}`}</h3>
         </div>
-      ))}
-    </div>
+
+      ))
+      }
+    </div >
   );
 }
 
