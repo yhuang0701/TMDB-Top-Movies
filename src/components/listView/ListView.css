@@ -1,0 +1,59 @@
+/* ListView.css */
+/* .search-and-sort {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.sorted-card {
+  margin-right: 1rem;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="text"],
+select {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.listview-container {
+  background-color: #222; 
+  color: #fff; 
+  padding: 2rem; 
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 1rem; 
+}
+
+.listview-card {
+  display: flex;
+  max-width: 30rem;
+  align-items: center;
+  margin-bottom: 1rem;
+  transition: background-color 0.3s ease;
+  flex-basis: calc(50% - 0.5rem);
+  box-sizing: border-box;
+}
+
+.listview-card:hover {
+  background-color: #f9f9f9;
+}
+
+.movieListImg {
+  width: 5rem;
+  margin-right: 1rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin: 0;
+  line-height: 1.2
+}
+
+.listview-card:nth-child(even) {
+  margin-left: 1rem;
+} */
+

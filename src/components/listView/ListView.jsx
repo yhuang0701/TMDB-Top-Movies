@@ -54,30 +54,32 @@ const ListView = ({ movieData }) => {
 
   return (
     <div>
-      <input
-        type="text"
-        placeholder="Search movies..."
-        value={searchQuery}
-        onChange={handleSearch}
-      />
-      <div className='sorted-card'>
-        <label>Sort By:</label>
-        <select value={sortBy} onChange={handleSortBy}>
-          <option value="name">Name</option>
-          <option value="release_date">Release Date</option>
-          <option value="vote_average">Vote Average</option>
-        </select>
-      </div>
-      <div className='sorted-card'>
-        <label>Sort Order:</label>
-        <select value={sortOrder} onChange={handleSortOrder}>
-          <option value="asc">Ascending</option>
-          <option value="desc">Descending</option>
-        </select>
+      <div className="search-and-sort">
+        <input
+          type="text"
+          placeholder="Search movies..."
+          value={searchQuery}
+          onChange={handleSearch}
+        />
+        <div className='sorted-card'>
+          <label>Sort By:</label>
+          <select value={sortBy} onChange={handleSortBy}>
+            <option value="name">Name</option>
+            <option value="release_date">Release Date</option>
+            <option value="vote_average">Vote Average</option>
+          </select>
+        </div>
+        <div className='sorted-card'>
+          <label>Sort Order:</label>
+          <select value={sortOrder} onChange={handleSortOrder}>
+            <option value="asc">Ascending</option>
+            <option value="desc">Descending</option>
+          </select>
+        </div>
       </div>
       {sortedData.map(movie => (
         <div key={movie.id} className="listview-card">
-          <img className="movieImg" src={`https://image.tmdb.org/t/p/w92${movie.poster_path}`} alt="movie poster" />
+          <img className="movieListImg" src={`https://image.tmdb.org/t/p/w92${movie.poster_path}`} alt="movie poster" />
           <h3>{movie.title}</h3>
           <h3>{movie.release_date}</h3>
           <h3>{`Movie Rating: ${movie.vote_average}`}</h3>
