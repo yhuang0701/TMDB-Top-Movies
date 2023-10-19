@@ -2,6 +2,7 @@ import './GalleryView.css';
 import { useEffect, useState, useCallback } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const GalleryView = ({ movieData, api_key }) => {
   const [genres, setGenres] = useState([]);
@@ -57,4 +58,16 @@ const GalleryView = ({ movieData, api_key }) => {
     </>
   )
 }
+
+GalleryView.propTypes = {
+  movieData: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    release_date: PropTypes.string.isRequired,
+    vote_average: PropTypes.number.isRequired,
+    poster_path: PropTypes.string.isRequired,
+  })).isRequired,
+  api_key: PropTypes.string.isRequired,
+};
+
 export default GalleryView;

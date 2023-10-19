@@ -1,7 +1,7 @@
 import './ListView.css'
 import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-
+import PropTypes from 'prop-types';
 
 const ListView = ({ movieData }) => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -99,5 +99,15 @@ const ListView = ({ movieData }) => {
     </div>
   );
 }
+
+ListView.propTypes = {
+  movieData: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    release_date: PropTypes.string.isRequired,
+    vote_average: PropTypes.number.isRequired,
+    poster_path: PropTypes.string.isRequired,
+  })).isRequired,
+};
 
 export default ListView;

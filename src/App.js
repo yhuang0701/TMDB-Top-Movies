@@ -45,7 +45,7 @@ function App() {
   );
 }
 
-ListView.propTypes = {
+App.propTypes = {
   movieData: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
