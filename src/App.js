@@ -33,7 +33,7 @@ function App() {
 
   return (
     <>
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router basename="/mp2">
         <Header />
         <Routes>
           <Route exact path="/" element={<ListView movieData={movieData} />} />
