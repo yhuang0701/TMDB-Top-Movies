@@ -6,23 +6,27 @@ const DetailView = ({ movieDetails }) => {
   const currentIndex = movieDetails.findIndex(movie => movie.id.toString() === id);
   const currentMovie = movieDetails[currentIndex];
 
-  const previousMovie = movieDetails[currentIndex - 1];
-  const nextMovie = movieDetails[currentIndex + 1];
+  const previousMovie = movieDetails[(currentIndex + movieDetails.length - 1) % movieDetails.length];
+  const nextMovie = movieDetails[(currentIndex + movieDetails.length + 1) % movieDetails.length];
 
   return (
     <div className="detail-view">
-      <h1>{currentMovie.title}</h1>
-      <img src={`https://image.tmdb.org/t/p/w300${currentMovie.poster_path}`} alt="movie poster" />
-      <p><strong>Release Date:</strong> {currentMovie.release_date}</p>
-      <p><strong>Vote Average:</strong> {currentMovie.vote_average}</p>
-      <p><strong>Overview:</strong> {currentMovie.overview}</p>
+      <div className="movie-container">
+        <img src={`https://image.tmdb.org/t/p/w780/${currentMovie.backdrop_path}`} alt="movie backdrop" />
+        <h2>{currentMovie.title}</h2>
+        <div className="para-container">
+          <p><strong>Release Date:</strong> {currentMovie.release_date}</p>
+          <p><strong>Vote Average:</strong> {currentMovie.vote_average}</p>
+          <p><strong>Overview:</strong> {currentMovie.overview}</p>
+        </div>
+      </div>
 
-      <div className="navigation">
+      <div className="slideBtns">
         {previousMovie &&
-          <Link to={`/detail/${previousMovie.id}`} className="nav-button">Previous</Link>
+          <Link to={`/detail/${previousMovie.id}`} className="slide-button">Previous</Link>
         }
         {nextMovie &&
-          <Link to={`/detail/${nextMovie.id}`} className="nav-button">Next</Link>
+          <Link to={`/detail/${nextMovie.id}`} className="slide-button">Next</Link>
         }
       </div>
     </div>
