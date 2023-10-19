@@ -1,5 +1,6 @@
 import './DetailView.css';
 import { Link, useParams } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const DetailView = ({ movieDetails }) => {
   const { id } = useParams();
@@ -32,5 +33,15 @@ const DetailView = ({ movieDetails }) => {
     </div>
   );
 }
+
+DetailView.propTypes = {
+  movieDetails: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    release_date: PropTypes.string.isRequired,
+    vote_average: PropTypes.number.isRequired,
+    poster_path: PropTypes.string.isRequired,
+  })).isRequired,
+};
 
 export default DetailView;
