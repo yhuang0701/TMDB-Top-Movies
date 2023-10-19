@@ -63,7 +63,7 @@ const ListView = ({ movieData }) => {
           onChange={handleSearch}
         />
         <div className='sorted-card'>
-          <label>Sort By:</label>
+          <label>Sort By: </label>
           <select value={sortBy} onChange={handleSortBy}>
             <option value="name">Name</option>
             <option value="release_date">Release Date</option>
@@ -71,27 +71,32 @@ const ListView = ({ movieData }) => {
           </select>
         </div>
         <div className='sorted-card'>
-          <label>Sort Order:</label>
+          <label>Sort Order: </label>
           <select value={sortOrder} onChange={handleSortOrder}>
             <option value="asc">Ascending</option>
             <option value="desc">Descending</option>
           </select>
         </div>
       </div>
-      {sortedData.map(movie => (
 
-        <div key={movie.id} className="listview-card">
-          <Link to={`detail/${movie.id}`}>
-            <img className="movieListImg" src={`https://image.tmdb.org/t/p/w92${movie.poster_path}`} alt="movie poster" />
-          </Link>
-          <h3>{movie.title}</h3>
-          <h3>{movie.release_date}</h3>
-          <h3>{`Movie Rating: ${movie.vote_average}`}</h3>
-        </div>
-
-      ))
-      }
-    </div >
+      <div className="listview-container">
+        {sortedData.map(movie => (
+          <div key={movie.id} className="listview-card">
+            <div className="listviewImg">
+              <Link to={`detail/${movie.id}`}>
+                <img className="movieListImg" src={`https://image.tmdb.org/t/p/w92${movie.poster_path}`} alt="movie poster" />
+              </Link>
+            </div>
+            <div className="listviewText">
+              <h3>{movie.title}</h3>
+              <h3>{movie.release_date}</h3>
+              <h3>{`Movie Rating: ${movie.vote_average}`}</h3>
+            </div>
+          </div>
+        ))
+        }
+      </div>
+    </div>
   );
 }
 
