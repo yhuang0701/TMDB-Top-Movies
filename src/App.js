@@ -5,6 +5,7 @@ import GalleryView from "./components/galleryView/GalleryView";
 import ListView from "./components/listView/ListView";
 import DetailView from "./components/detailView/DetailView";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 function App() {
   const api_key = "a4d366e658580b25d2ef402d277cb96f";
@@ -43,5 +44,15 @@ function App() {
     </>
   );
 }
+
+ListView.propTypes = {
+  movieData: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    release_date: PropTypes.string.isRequired,
+    vote_average: PropTypes.number.isRequired,
+    poster_path: PropTypes.string.isRequired,
+  })).isRequired,
+};
 
 export default App;
