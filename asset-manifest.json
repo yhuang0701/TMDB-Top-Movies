@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/TMDB-Top-Movies/static/css/main.7979d3c0.css",
+    "main.js": "/TMDB-Top-Movies/static/js/main.8a1ec487.js",
+    "static/js/787.34a41395.chunk.js": "/TMDB-Top-Movies/static/js/787.34a41395.chunk.js",
+    "index.html": "/TMDB-Top-Movies/index.html",
+    "main.7979d3c0.css.map": "/TMDB-Top-Movies/static/css/main.7979d3c0.css.map",
+    "main.8a1ec487.js.map": "/TMDB-Top-Movies/static/js/main.8a1ec487.js.map",
+    "787.34a41395.chunk.js.map": "/TMDB-Top-Movies/static/js/787.34a41395.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7979d3c0.css",
+    "static/js/main.8a1ec487.js"
+  ]
+}
